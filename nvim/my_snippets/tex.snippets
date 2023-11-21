@@ -264,6 +264,7 @@ snippet conj "conjugate" iA
 \overline{$1}$0
 endsnippet
 
+context "math()"
 snippet sum "sum" wA
 \sum_{n=${1:1}}^{${2:\infty}} ${3:a_n z^n}
 endsnippet
@@ -459,7 +460,25 @@ endsnippet
 
 priority 200
 context "math()"
-snippet '(?<!\\)(theta|phi|epsilon|psi|omega|Theta|Phi|Epsilon|Psi|Omega|sigma|Sigma|mu|nu)' "ln" rwA
+snippet '(?<!\\)(theta|phi|alpha|omega|Theta|Phi|alpha|Omega|sigma|Sigma|Psi|Epsilon|mu|nu)' "ln" rwA
+\\`!p snip.rv = match.group(1)`
+endsnippet
+
+# snippet for epsilon and psi without interferring
+priority 200
+context "math()"
+snippet '(?<!\\)(epsilon|varepsilon)' "ln" rwA
+\\`!p snip.rv = match.group(1)`
+endsnippet
+
+context "math()"
+snippet '(?<!epsi)(?<!\\)(psi)' "ln" rwA
+\\psi
+endsnippet
+
+priority 200
+context "math()"
+snippet '(?<!\\)(lambda|Lambda|tau|Tau|gamma|Gamma|rho|delta|Delta|iota|kappa|xi)' "ln" rwA
 \\`!p snip.rv = match.group(1)`
 endsnippet
 
@@ -595,6 +614,32 @@ snippet case "cases" wA
 \end{cases}
 endsnippet
 
+context math()
+snippet ">=|(?<!\\)geq" "greater or equal to" A
+\geq $0
+endsnippet
+
+context math()
+snippet "<~" "less or equal to (up to constant)" A
+\lesssim $0
+endsnippet
+
+context math()
+snippet ">~" "less or equal to (up to constant)" A
+\gtrsim $0
+endsnippet
+
+priority 10
+context "math()"
+snippet "<=|(?<!\\)leq" "less or equal to" iA
+\leq $0
+endsnippet
+
+context math()
+snippet "!=|(?<!\\)neq" "not equal" A
+\neq $0
+endsnippet
+
 snippet SI "SI" iA
 \SI{$1}{$2}
 endsnippet
@@ -646,5 +691,7 @@ endsnippet
 snippet DD "D" iA
 \mathbb{D}
 endsnippet
+
+
 
 # vim:ft=snippets

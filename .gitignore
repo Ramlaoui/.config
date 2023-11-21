@@ -3,4 +3,6 @@ gcloud/
 github-copilot/
 karabiner/
 rstudio/
+gspread/
+.DS_Store
 
