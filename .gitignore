@@ -4,5 +4,6 @@ github-copilot/
 karabiner/
 rstudio/
 gspread/
+wandb/
 .DS_Store
 
