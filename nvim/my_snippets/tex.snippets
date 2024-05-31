@@ -109,12 +109,36 @@ snippet table "Table environment" b
 \end{table}
 endsnippet
 
+snippet frame "Frame environment" b
+\begin{frame}
+	\frametitle{${1:title}}
+	$0
+\end{frame}
+endsnippet
+
+snippet column "Column environment" b
+\begin{columns}
+\column{$1\textwidth}
+	$0
+\end{columns}
+endsnippet
+
 snippet fig "Figure environment" b
 \begin{figure}[${1:htpb}]
 	\centering
 	${2:\includegraphics[width=0.8\textwidth]{$3}}
 	\caption{${4:$3}}
 	\label{fig:${5:${3/\W+/-/g}}}
+\end{figure}
+endsnippet
+
+snippet subfig "Subfigure environment" b
+\begin{figure}[${1:htpb}]
+	\centering
+	\subfloat[${2:caption}]{\includegraphics[width=0.4\textwidth]{$3}}
+	\subfloat[${4:caption}]{\includegraphics[width=0.4\textwidth]{$5}}
+	\caption{${6:caption}}
+	\label{fig:${7:${6/\W+/-/g}}}
 \end{figure}
 endsnippet
 

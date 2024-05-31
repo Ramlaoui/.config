@@ -10,6 +10,8 @@ return {
 		"onsails/lspkind.nvim", -- vs-code like pictograms
 		"SirVer/ultisnips", -- ultisnips
 		"quangnguyen30192/cmp-nvim-ultisnips", -- ultisnips support
+		"kdheepak/cmp-latex-symbols", -- latex symbols
+		-- "micangl/cmp-vimtex", -- vimtex completion
 	},
 	config = function()
 		-- require("luasnip.loaders.from_lua").load({ paths = "~/.snippets" })
@@ -52,6 +54,8 @@ return {
 				{ name = "ultisnips" }, -- ultisnips
 				{ name = "buffer" }, -- text within current buffer
 				{ name = "path" }, -- file system paths
+				{ name = "latex_symbols" }, -- latex symbols
+				{ name = "vimtex" }, -- vimtex completion
 			}),
 			-- configure lspkind for vs-code like pictograms in completion menu
 			formatting = {
